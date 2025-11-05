@@ -8,9 +8,9 @@ SECRET_KEY = 'django-insecure-o)v9@wxz2nml@i@xbv2m6y&0b2(gq@!*hmdz@e*#!4h@g_4-n!
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "elracodelsol.onrender.com",
     "127.0.0.1",
     "localhost",
-    "elracosol-backend.onrender.com",  # добавим позже
 ]
 
 INSTALLED_APPS = [
