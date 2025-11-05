@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Category, Dish, TeamMember
+from .models import Category, Dish, TeamMember, GalleryImage
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,3 +21,8 @@ class TeamMemberAdmin(admin.ModelAdmin):
         (None, {"fields": ("order","name","role","description","photo")}),
         ("Social Links", {"fields": ("instagram","facebook","linkedin","twitter","tiktok"), "classes": ("collapse",)}),
     )
+
+@admin.register(GalleryImage)
+class GalleryImageAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "order", "image")
+    ordering = ("order",)

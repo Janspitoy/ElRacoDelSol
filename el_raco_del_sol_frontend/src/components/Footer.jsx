@@ -20,7 +20,7 @@ export default function Footer() {
           </a>
         </div>
         <small className="text-muted1">
-          © {new Date().getFullYear()} El Racó del Sol — Hecho con ❤️ en Barcelona
+          © {new Date().getFullYear()} El Racó del Sol — Hecho con ❤️ por <a href="https://touch-craft.com/es/" className="touchcraft">TouchCraft</a>
         </small>
       </div>
     </footer>

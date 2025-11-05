@@ -16,7 +16,7 @@ DEBUG = env("DEBUG", default=False)
 
 ALLOWED_HOSTS = env.list(
     "ALLOWED_HOSTS",
-    default=["127.0.0.1", "localhost", "elracodelsol.onrender.com"]
+    default=["127.0.0.1", "localhost", "elracodelsol.onrender.com", "172.20.10.5", "192.168.1.129"]
 )
 
 # --- ПРИЛОЖЕНИЯ ---
@@ -94,17 +94,20 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # --- CORS ---
-CORS_ALLOWED_ORIGINS = [
-    "https://janspitoy.github.io",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_HEADERS = ["*"]
+CORS_ALLOW_METHODS = ["*"]
+
 
 # --- DRF ---
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
     ]
 }
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

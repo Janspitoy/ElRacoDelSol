@@ -6,12 +6,31 @@ body {
   overflow-x: hidden;
 }
 
+body.menu-open {
+  overflow: hidden !important; /* предотвращает прокрутку */
+  padding-right: var(--scrollbar-width, 0px) !important;
+}
+
+:root {
+  --scrollbar-width: 0px !important;
+}
+
 h1, h2, h3, h4, h5, h6, .navbar-brand, .display-3 {
   font-family: 'Playfair Display', serif;
 }
 
 text-muted1 {
     color: white;
+}
+
+footer a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+footer a:hover {
+    color: #ebef3a !important;
+    transform: none !important;
 }
 
 .me-5 {
@@ -206,7 +225,7 @@ text-muted1 {
 .card {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: none;
-  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  background-color: #fff1c8 !important;
   position: relative;
   overflow: hidden;
 }
@@ -727,6 +746,7 @@ footer a:hover {
 
   #about img {
     margin-top: 2rem;
+    z-index: 1000;
   }
 }
 

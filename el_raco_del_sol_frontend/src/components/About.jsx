@@ -10,7 +10,7 @@ export default function About() {
             la calidez de Barcelona. Cada plato está hecho con pasión, fuego y
             sol.
           </p>
-          <p className="text-muted">
+          <p className="lead">
             Descubre nuestros sabores, vive nuestra historia y disfruta de un
             rincón donde cada comida se convierte en un recuerdo.
           </p>
