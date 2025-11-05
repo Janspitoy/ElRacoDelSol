@@ -7,7 +7,11 @@ SECRET_KEY = 'django-insecure-o)v9@wxz2nml@i@xbv2m6y&0b2(gq@!*hmdz@e*#!4h@g_4-n!
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "elracosol-backend.onrender.com",  # добавим позже
+]
 
 INSTALLED_APPS = [
     'rest_framework',
@@ -83,6 +87,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
+    "https://janspitoy.github.io",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
