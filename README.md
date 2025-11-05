@@ -180,16 +180,3 @@ You are free to explore, fork, and learn from it.
 
 > 🌴 *"El sabor del Mediterráneo bajo el sol de Barcelona"*
 > *The taste of the Mediterranean under the Barcelona sun.*
-
-```
-
----
-
-💡 Этот вариант:
-- полностью **валидный markdown** (GitHub корректно отобразит `<div align="center">` и таблицы);
-- содержит все инструкции;
-- оформлен как у профессиональных full-stack демо;
-- готов к публикации без правок.  
-
-Хочешь, я добавлю наверх красивый **баннер с названием проекта и фоном ресторана** (например, `banner.png`), чтобы README выглядел “premium”?
-```
