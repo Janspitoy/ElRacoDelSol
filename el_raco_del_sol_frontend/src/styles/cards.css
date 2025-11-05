@@ -1,0 +1,32 @@
+.card {
+  background-color: #202020;
+  border: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #eee;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  object-fit: cover;
+  height: 250px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-warning {
+  background-color: #e3b04b;
+  border: none;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #f7c45a;
+  color: #000;
+}
