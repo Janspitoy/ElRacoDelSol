@@ -1,8 +1,8 @@
 # 🌞 **El Racó del Sol**  
 **A modern full-stack portfolio project — restaurant landing page built with React & Django REST Framework.**
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-000?style=for-the-badge&logo=githubpages&logoColor=white)](https://janspitoy.github.io/ElRacoDelSol/)
-[![Backend API](https://img.shields.io/badge/📡_Backend_API-000?style=for-the-badge&logo=django&logoColor=white)](https://elracodelsol.onrender.com/api/)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-000?style=for-the-badge&logo=githubpages&logoColor=white)](https://elracodelsol.touch-craft.com/)
+[![Backend API](https://img.shields.io/badge/📡_Backend_API-000?style=for-the-badge&logo=django&logoColor=white)](https://elracodelsol.touch-craft.com/api)
 [![Made with React](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Made with Django](https://img.shields.io/badge/Backend-Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
 
