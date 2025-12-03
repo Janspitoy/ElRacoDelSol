@@ -1,10 +1,12 @@
+import heroImg from '../assets/img.png';
+
 export default function Hero() {
   return (
     <section
       id="hero"
       className="hero d-flex align-items-center justify-content-center text-center text-light"
       style={{
-        backgroundImage: "url('../src/assets/img.png')",
+        backgroundImage: `url(${heroImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -24,4 +26,3 @@ export default function Hero() {
     </section>
   );
 }
-

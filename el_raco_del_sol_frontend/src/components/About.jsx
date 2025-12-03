@@ -1,3 +1,5 @@
+import img2 from "../assets/img2.avif";
+
 export default function About() {
   return (
     <section id="about" className="py-5 bg-dark text-light">
@@ -15,8 +17,9 @@ export default function About() {
             rincón donde cada comida se convierte en un recuerdo.
           </p>
         </div>
+
         <img
-          src="../src/assets/img2.avif"
+          src={img2}
           alt="Chef preparando tapas"
           className="img-fluid rounded shadow"
         />

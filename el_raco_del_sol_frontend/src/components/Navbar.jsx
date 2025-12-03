@@ -18,38 +18,67 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🔹 Исправляем "прыжок" из-за скроллбара
   useEffect(() => {
     const navCollapse = document.querySelector("#nav");
+    if (!navCollapse) return;
 
     const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
-    const handleToggle = () => {
-      const isOpen = navCollapse.classList.contains("show");
-      document.body.classList.toggle("menu-open", isOpen);
-      document.documentElement.style.setProperty(
-        "--scrollbar-width",
-        `${getScrollbarWidth()}px`
-      );
+    const handleCloseMenu = () => {
+      const bsCollapse = window.bootstrap?.Collapse.getInstance(navCollapse);
+      if (navCollapse.classList.contains("show")) {
+        bsCollapse?.hide();
+      }
     };
 
-    navCollapse?.addEventListener("shown.bs.collapse", handleToggle);
-    navCollapse?.addEventListener("hidden.bs.collapse", handleToggle);
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.navbar')) {
+        handleCloseMenu();
+      }
+    };
+
+    const handleToggle = (event) => {
+
+      if (event.type === 'show.bs.collapse') {
+        window.addEventListener("scroll", handleCloseMenu, { passive: true });
+        document.addEventListener("click", handleClickOutside);
+      }
+      else if (event.type === 'hidden.bs.collapse') {
+        window.removeEventListener("scroll", handleCloseMenu);
+        document.removeEventListener("click", handleClickOutside);
+      }
+
+      const isOpen = event.type === 'shown.bs.collapse';
+
+      if (event.type === 'shown.bs.collapse' || event.type === 'hidden.bs.collapse') {
+        document.body.classList.toggle("menu-open", isOpen);
+        document.documentElement.style.setProperty(
+          "--scrollbar-width",
+          `${getScrollbarWidth()}px`
+        );
+      }
+    };
+
+    navCollapse.addEventListener("show.bs.collapse", handleToggle);
+    navCollapse.addEventListener("shown.bs.collapse", handleToggle);
+    navCollapse.addEventListener("hidden.bs.collapse", handleToggle);
 
     return () => {
-      navCollapse?.removeEventListener("shown.bs.collapse", handleToggle);
-      navCollapse?.removeEventListener("hidden.bs.collapse", handleToggle);
+      navCollapse.removeEventListener("show.bs.collapse", handleToggle);
+      navCollapse.removeEventListener("shown.bs.collapse", handleToggle);
+      navCollapse.removeEventListener("hidden.bs.collapse", handleToggle);
+
+      window.removeEventListener("scroll", handleCloseMenu);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
-  // 🔹 Переход и плавный скролл
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
 
     const navCollapse = document.querySelector(".navbar-collapse");
     const bsCollapse = window.bootstrap?.Collapse.getInstance(navCollapse);
 
-    // Закрыть меню после клика
     if (bsCollapse) bsCollapse.hide();
 
     if (location.pathname !== "/") {

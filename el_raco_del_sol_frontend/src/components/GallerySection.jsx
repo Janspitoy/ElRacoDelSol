@@ -13,7 +13,6 @@ export default function GallerySection() {
     axios
       .get("http://127.0.0.1:8000/api/gallery/")
       .then((res) => {
-        // Проверяем, действительно ли пришёл массив
         if (Array.isArray(res.data)) {
           setImages(res.data);
         } else {

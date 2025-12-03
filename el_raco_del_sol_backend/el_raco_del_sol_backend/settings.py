@@ -68,7 +68,7 @@ WSGI_APPLICATION = "el_raco_del_sol_backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'NAME': BASE_DIR / "data" / "db.sqlite3",
     }
 }
 
@@ -87,11 +87,11 @@ USE_I18N = True
 USE_TZ = True
 
 # --- СТАТИКА И МЕДИА ---
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # --- CORS ---
 CORS_ALLOW_ALL_ORIGINS = True

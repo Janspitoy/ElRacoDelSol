@@ -26,14 +26,14 @@ export default function CategoryPage() {
         <div className="container">
           {/* Заголовок */}
           <div className="text-center mb-5">
-            <div className="d-flex justify-content-between align-items-center flex-wrap mb-4">
-              <Link to="/" className="btn btn-outline-warning px-4 py-2 order-1 order-md-0">
-                ← Volver
-              </Link>
+            <div className="category-header mb-5">
+            <Link to="/" className="btn btn-outline-warning px-4 py-2">
+              ← Volver
+            </Link>
 
-              <h1 className="fw-bold text-warning mb-0 text-center flex-grow-1 order-0 order-md-1 w-100 w-md-auto">
-                {category.name}
-              </h1>
+            <h1 className="fw-bold text-warning mb-0">
+              {category.name}
+            </h1>
             </div>
             <p className="lead text-muted1">{category.description}</p>
           </div>
